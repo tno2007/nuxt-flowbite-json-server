@@ -4,18 +4,24 @@ import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
 
 const layouts = ["default", "flowbite"];
-const index = ref(0);
-// const currentLayout = ref(layouts[index.value]);
 
-setPageLayout(layouts[index.value]);
+const data = reactive({
+  index: 0,
+  currentLayout: layouts[0],
+});
 
 const toggle = () => {
-  ++index.value;
-  if (index.value >= layouts.length) {
-    index.value = 0;
+  ++data.index;
+  if (data.index >= 2) {
+    data.index = 0;
   }
-  setPageLayout(layouts[index.value]);
+  data.currentLayout = layouts[data.index];
 };
+
+const route = useRoute();
+const router = useRouter();
+
+console.log("getRoutes", router.getRoutes());
 
 // initialize components based on data attribute selectors
 onMounted(() => {
@@ -24,12 +30,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <!--<NuxtLayout :name="currentLayout">-->
-  <NuxtLayout>
+  <NuxtLayout :name="data.currentLayout">
     <p class="font-bold">Some page content</p>
     <br />
     index:
-    <pre>{{ index }}</pre>
+    <pre>{{ data.index }}</pre>
     <br />
     <button
       type="button"
