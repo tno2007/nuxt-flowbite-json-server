@@ -35,11 +35,11 @@ dbo.getCaseDetails
     @crmGuid -- is this the correct parameter?
 ```
 
-| Label                | Data type | Example                                   |
-| -------------------- | --------- | ----------------------------------------- |
-| Image                | varchar   | \\egnytepath\caseworker\wuiertwi23423.jpg |
-| Caseworker           | varchar   |
-| Title                | varchar   |
-| Email                | varchar   |
-| Relationship Manager | varchar   |
-| Caseworker assistant | varchar   |
+| Label               | Data type | Example                                   |
+| ------------------- | --------- | ----------------------------------------- |
+| Image               | varchar   | \\egnytepath\caseworker\wuiertwi23423.jpg |
+| Caseworker          | varchar   |
+| Title               | varchar   |
+| Email               | varchar   |
+| RelationshipManager | varchar   |
+| CaseworkerAssistant | varchar   |
